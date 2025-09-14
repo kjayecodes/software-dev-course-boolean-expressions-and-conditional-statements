@@ -28,18 +28,24 @@ const readline = require('readline-sync');
 
 const hasTorch = true;
 const hasMap = false;
+const hasWeapon = false;
+const hasPotion = true; 
 
-console.log("You see two paths: one leads to the mountains, the other to the village.");
-const choice = readline.question("Do you go to the 'mountains' or the 'village'?");
+console.log("Welcome to the Adventure Game!"); // Introduction
+console.log("You wake up in a dark forest."); // Setting the scene
+console.log("You see two paths: one leads to the mountains, the other to the village."); // Presenting choices
+const choice = readline.question("Do you go to the 'mountains' or the 'village'?"); // Getting user input
 
-if (choice === "mountains" && hasTorch) {
-  console.log("You safely navigate through the dark mountains.");
+// Conditional statements based on player choices and items
+
+if (choice === "mountains" && hasTorch) { 
+  console.log("You safely navigate through the dark mountains."); // Safe path with torch
 } else if (choice === "mountains" && !hasTorch) {
-  console.log("It's too dark to proceed. You decide to turn back.");
+  console.log("It's too dark to proceed. You decide to turn back."); // Unsafe path without torch
 } else if (choice === "village" || hasMap) {
-  console.log("You find your way to the village.");
+  console.log("You find your way to the village."); // Safe path with map or choosing village
 } else {
-  console.log("You get lost and wander aimlessly.");
+  console.log("You get lost and wander aimlessly."); // Unsafe path without map and not choosing village
 }
 
 /* 
